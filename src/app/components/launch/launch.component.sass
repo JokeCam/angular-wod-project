@@ -1,0 +1,54 @@
+$medium-blue:#245edb
+$light-blue:#0c8dea
+
+$medium-green-off: #3ba11b
+$light-green-off: #358a19
+
+$medium-green-on: #276b13
+$light-green-on: #328516
+
+.start-bar
+  height: 40px
+  background: linear-gradient(to bottom, #{$medium-blue} 0%, #3f8cf3 9%, #{$medium-blue} 18%, #{$medium-blue} 92%, #333 100%) center/cover no-repeat
+
+  .start-bar-button
+    background: linear-gradient(to bottom, #{$medium-green-off} 0%, #49c921 9%, #{$light-green-off} 18%, #{$medium-green-off} 92%, #333 100%) center/cover no-repeat
+    -webkit-box-shadow: -7px 0px 1px -5px rgba(0, 0, 0, 0.2) inset
+    -moz-box-shadow: -7px 0px 1px -5px rgba(0, 0, 0, 0.2) inset
+    box-shadow: -7px 0px 1px -5px rgba(0, 0, 0, 0.2) inset
+    width: 140px
+    height: 100%
+    border: none
+    font-family: Franklin Gothic Medium, serif
+    font-size: 30px
+    line-height: 1px
+    color: #FFFFFF
+    font-style: italic
+    border-top-right-radius: 16px
+    border-bottom-right-radius: 16px
+
+    &.active
+      background: linear-gradient(to bottom, #{$medium-green-on} 0%, #47bb22 9%, #{$light-green-on} 18%, #{$medium-green-on} 92%, #{$medium-green-on} 92%, #333 100%) center/cover no-repeat
+      -webkit-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.2) inset
+      -moz-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.2) inset
+      box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.2) inset
+
+    .start-bar-button-text
+      margin: 0 0 2px 5px
+
+    .windows-xp-icon
+      margin-left: 5px
+      width: 30px
+      height: 30px
+
+  .start-bar-time
+    height: 100%
+    width: 100px
+    background: linear-gradient(to bottom, #2d9ad9 0%, #32b4ff 9%, #2d9ad9 18%, #2d9ad9 92%, #333 100%) center/cover no-repeat
+    -webkit-box-shadow: -0.6px 0px 0px 0px rgba(0, 0, 0, 0.3)
+    -moz-box-shadow: -0.6px 0px 0px 0px rgba(0, 0, 0, 0.3)
+    box-shadow: -0.6px 0px 0px 0px rgba(0, 0, 0, 0.3)
+
+    .start-bar-current-time
+      color: #FFFFFF
+      font-family: Segoe UI Regular,serif

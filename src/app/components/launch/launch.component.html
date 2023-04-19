@@ -1,5 +1,13 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="fixed-bottom start-bar d-flex justify-content-between">
 
-    <a class="navbar-brand" href="#">Angular Wod Project</a>
+    <button class="start-bar-button d-flex align-items-center"
+            [class.active]="isStartMenuButtonToggled"
+            (click)="toggleStartMenuButton()">
+      <img src="assets/images/windows-xp-icon.ico" class="windows-xp-icon" alt="Image of a windows xp start bar">
+      <p class="start-bar-button-text">start</p>
+    </button>
 
+    <div class="start-bar-time d-flex justify-content-center align-items-center">
+      <p class="start-bar-current-time m-0">{{currentTime | date: 'shortDate'}}</p>
+    </div>
 </nav>

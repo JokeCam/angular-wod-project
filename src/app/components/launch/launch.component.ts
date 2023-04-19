@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./launch.component.sass']
 })
 export class LaunchComponent {
-  title = 'angular-wod-project';
+
+  isStartMenuButtonToggled = false;
+  currentTime = new Date();
+  constructor() {}
+
+  toggleStartMenuButton() {
+    this.isStartMenuButtonToggled = !this.isStartMenuButtonToggled;
+  }
 }
