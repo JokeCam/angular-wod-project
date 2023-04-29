@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from "rxjs";
+import { LaunchStateModel } from "../../store/models/launch-state.model";
+import { Store } from "@ngxs/store";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,10 @@ export class LaunchComponent {
 
   isStartMenuButtonToggled = false;
   currentTime = new Date();
-  constructor() {}
+  startMenuTitle$: Observable<LaunchStateModel["startMenuTitle"]>;
+  constructor(store: Store) {
+    this.startMenuTitle$ = store.select(state => state.launch.startMenuTitle);
+  }
 
   toggleStartMenuButton() {
     this.isStartMenuButtonToggled = !this.isStartMenuButtonToggled;

@@ -1,10 +1,11 @@
 <div class="window m-0 position-absolute" style="margin: 32px; width: 250px">
   <div app-dnd class="title-bar">
     <div class="title-bar-text">
-      My First Program
+      NGXS
     </div>
   </div>
-  <div class="window-body">
-    <p>Hello, world!</p>
+  <div class="window-body" [formGroup]="ngxsForm">
+    <input type="text" formControlName="startMenuTitle"/>
+    <button [disabled]="!ngxsForm.valid" (click)="dispatchAction()">Dispatch Action</button>
   </div>
 </div>

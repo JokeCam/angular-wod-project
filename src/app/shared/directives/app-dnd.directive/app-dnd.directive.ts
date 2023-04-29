@@ -22,7 +22,7 @@ export class AppDndDirective {
     this.isMouseDown = false;
   }
 
-  @HostListener('mousemove', ['$event'])
+  @HostListener('window:mousemove', ['$event'])
   handleMouseMove(e: MouseEvent) {
     if (!this.isMouseDown) {
       return;

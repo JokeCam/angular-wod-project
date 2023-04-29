@@ -10,7 +10,7 @@
           [class._active]="isStartMenuButtonToggled"
           (click)="toggleStartMenuButton()">
     <img src="assets/images/windows-xp-icon.ico" class="start-bar_button-icon" alt="Image of a windows xp start bar">
-    <p class="start-bar_button-text">start</p>
+    <p class="start-bar_button-text">{{startMenuTitle$ | async}}</p>
   </button>
 
   <div class="start-bar_time d-flex justify-content-center align-items-center">
