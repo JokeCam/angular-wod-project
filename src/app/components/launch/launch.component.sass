@@ -17,12 +17,40 @@ $light-green-on: #328516
     width: 200px
     background: white
 
+.start-menu
+  background-color: white
+  bottom: 40px
+  width: 300px
+  height: 400px
+  border-radius: 5px
+  border: 3px solid $medium-blue
+  border-bottom: 10px solid $medium-blue
+
+  &__top-bar
+    height: 60px
+    background: linear-gradient(to bottom, #{$medium-blue} 0%, #3f8cf3 9%, #{$medium-blue} 18%, #{$medium-blue} 40%, #70aaf5 100%) center/cover no-repeat
+    border-bottom: 2px solid $medium-blue
+    border-top-right-radius: 1px
+    border-top-left-radius: 1px
+
+  &__user-icon
+    margin-left: 10px
+    border: 2px solid white
+    border-radius: 5px
+
+  &__user-name
+    color: white
+    font-size: 20px
+    margin: 0 0 0 12px
+
+
+
 
 .start-bar
   height: 40px
   background: linear-gradient(to bottom, #{$medium-blue} 0%, #3f8cf3 9%, #{$medium-blue} 18%, #{$medium-blue} 92%, #333 100%) center/cover no-repeat
 
-  .start-bar_button
+  .start-bar__button
     background: linear-gradient(to bottom, #{$medium-green-off} 0%, #49c921 9%, #{$light-green-off} 18%, #{$medium-green-off} 92%, #333 100%) center/cover no-repeat
     -webkit-box-shadow: -7px 0px 1px -5px rgba(0, 0, 0, 0.2) inset
     -moz-box-shadow: -7px 0px 1px -5px rgba(0, 0, 0, 0.2) inset

@@ -1,12 +1,22 @@
-<div class="launch">
+<div class="launch d-flex">
   <app-window>
 
   </app-window>
+
+  <div class="start-menu fixed-bottom"
+       [class.display-none]="isStartMenuButtonToggled">
+    <div class="start-menu__top-bar d-flex align-items-center">
+      <img class="start-menu__user-icon" src="assets/images/user-icon.png" />
+      <p class="start-menu__user-name">Guest</p>
+    </div>
+  </div>
 </div>
+
 
 <nav class="fixed-bottom start-bar d-flex justify-content-between">
 
-  <button class="start-bar_button d-flex align-items-center"
+
+  <button class="start-bar__button d-flex align-items-center overflow-hidden"
           [class._active]="isStartMenuButtonToggled"
           (click)="toggleStartMenuButton()">
     <img src="assets/images/windows-xp-icon.ico" class="start-bar_button-icon" alt="Image of a windows xp start bar">

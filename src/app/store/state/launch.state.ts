@@ -13,8 +13,6 @@ import { Launch } from "../actions/launch.actions";
 export class LaunchState {
   @Action(Launch.ChangeStartMenuTitle)
   changeStartMenuTitle(ctx: StateContext<LaunchStateModel>, action: Launch.ChangeStartMenuTitle) {
-    const state = ctx.getState();
-
     ctx.patchState({
       startMenuTitle: action.startMenuTitle,
     })
