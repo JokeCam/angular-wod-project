@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { NgxsModule } from "@ngxs/store";
 import { AppState } from "./store/state/app.state";
 import { NgxsReduxDevtoolsPluginModule } from "@ngxs/devtools-plugin";
+import { NgxsWindowComponent } from './components/windows/ngxs-window/ngxs-window.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgxsReduxDevtoolsPluginModule } from "@ngxs/devtools-plugin";
     LaunchComponent,
     AppDndDirective,
     WindowComponent,
+    NgxsWindowComponent,
   ],
   imports: [
     BrowserModule,

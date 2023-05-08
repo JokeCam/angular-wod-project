@@ -1,13 +1,17 @@
 <div class="launch d-flex">
-  <app-window>
-
-  </app-window>
+  <app-ngxs-window *ngIf="openedWindows.ngxsWindow">
+  </app-ngxs-window>
 
   <div class="start-menu fixed-bottom"
-       [class.display-none]="isStartMenuButtonToggled">
+       [class.display-none]="!isStartMenuButtonToggled">
     <div class="start-menu__top-bar d-flex align-items-center">
-      <img class="start-menu__user-icon" src="assets/images/user-icon.png" />
+      <img class="start-menu__user-icon" src="assets/images/user-icon.png" alt="User profile image"/>
       <p class="start-menu__user-name">Guest</p>
+    </div>
+    <div class="start-menu__menu-container d-flex flex-column flex-column-reverse">
+      <button class="start-menu__ngxs-button" (click)="handleStartUpMenuClick(windowTypesEnum.NGXS)">
+        <img class="start-menu__ngxs-icon" src="assets/images/ngxs-logo.webp" alt="NGXS library icon"/>
+        Store</button>
     </div>
   </div>
 </div>

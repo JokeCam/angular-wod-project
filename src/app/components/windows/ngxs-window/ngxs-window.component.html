@@ -1,0 +1,6 @@
+<app-window [title]="'NGXS'" [windowName]="ngxsWindow">
+  <div [formGroup]="ngxsForm">
+    <input type="text" formControlName="startMenuTitle"/>
+    <button [disabled]="!ngxsForm.valid" (click)="dispatchAction()">Dispatch Action</button>
+  </div>
+</app-window>
