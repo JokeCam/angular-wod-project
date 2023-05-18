@@ -11,6 +11,8 @@ import { NgxsModule } from "@ngxs/store";
 import { AppState } from "./store/state/app.state";
 import { NgxsReduxDevtoolsPluginModule } from "@ngxs/devtools-plugin";
 import { NgxsWindowComponent } from './components/windows/ngxs-window/ngxs-window.component';
+import { SpreadsheetWindowComponent } from './components/windows/spreadsheet-window/spreadsheet-window.component';
+import { ExportAsModule } from "ngx-export-as";
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { NgxsWindowComponent } from './components/windows/ngxs-window/ngxs-windo
     AppDndDirective,
     WindowComponent,
     NgxsWindowComponent,
+    SpreadsheetWindowComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { NgxsWindowComponent } from './components/windows/ngxs-window/ngxs-windo
     NgxsModule.forRoot(AppState, {
       developmentMode: true
     }),
-    NgxsReduxDevtoolsPluginModule.forRoot()
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    ExportAsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

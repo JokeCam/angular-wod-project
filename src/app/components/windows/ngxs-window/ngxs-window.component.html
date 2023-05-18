@@ -1,4 +1,5 @@
 <app-window [title]="'NGXS'" [windowName]="ngxsWindow">
+  <h5>Change menu name</h5>
   <div [formGroup]="ngxsForm">
     <input type="text" formControlName="startMenuTitle"/>
     <button [disabled]="!ngxsForm.valid" (click)="dispatchAction()">Dispatch Action</button>

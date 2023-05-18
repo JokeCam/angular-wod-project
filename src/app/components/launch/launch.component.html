@@ -1,17 +1,22 @@
 <div class="launch d-flex">
   <app-ngxs-window *ngIf="openedWindows.ngxsWindow">
   </app-ngxs-window>
+  <app-spreadsheet-window *ngIf="openedWindows.excelWindow">
+  </app-spreadsheet-window>
 
   <div class="start-menu fixed-bottom"
-       [class.display-none]="!isStartMenuButtonToggled">
+       [class.display-none]="false">
     <div class="start-menu__top-bar d-flex align-items-center">
       <img class="start-menu__user-icon" src="assets/images/user-icon.png" alt="User profile image"/>
       <p class="start-menu__user-name">Guest</p>
     </div>
     <div class="start-menu__menu-container d-flex flex-column flex-column-reverse">
-      <button class="start-menu__ngxs-button" (click)="handleStartUpMenuClick(windowTypesEnum.NGXS)">
-        <img class="start-menu__ngxs-icon" src="assets/images/ngxs-logo.webp" alt="NGXS library icon"/>
+      <button class="start-menu__button d-flex align-items-center" (click)="handleStartUpMenuClick(windowTypesEnum.NGXS)">
+        <img class="start-menu__icon" src="assets/images/ngxs-logo.webp" alt="NGXS library icon"/>
         Store</button>
+      <button class="start-menu__button d-flex align-items-center" (click)="handleStartUpMenuClick(windowTypesEnum.Excel)">
+        <img class="start-menu__icon" src="assets/images/spreadsheet-icon.png" alt="Spreadsheet icon"/>
+        Spreadsheets</button>
     </div>
   </div>
 </div>

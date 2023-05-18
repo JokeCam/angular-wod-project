@@ -44,8 +44,5 @@ export class LaunchState {
     ctx.patchState({
       openedWindows: {...newState}
     })
-
-    console.log(newState)
-
   }
 }
