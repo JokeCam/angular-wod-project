@@ -1,0 +1,10 @@
+<app-window [title]="'Spreadsheets'" [windowName]="ngxsWindow">
+  <div id="table" class="content" role="main" [innerHTML]="html" #table></div>
+  <div class="d-flex align-items-center justify-content-between">
+    <input type="file" (change)="handleFile($event)">
+    <div class="d-flex">
+      <button [disabled]="!html" (click)="onSave('xlsx')">Export as XLSX</button>
+      <button [disabled]="!html" (click)="onSave('pdf')">Export as PDF</button>
+    </div>
+  </div>
+</app-window>

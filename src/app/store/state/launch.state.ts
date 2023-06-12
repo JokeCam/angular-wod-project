@@ -7,6 +7,7 @@ import { Launch } from "../actions/launch.actions";
   name: 'launch',
   defaults: {
     startMenuTitle: 'start',
+    windowZIndex: 1,
     openedWindows: {
       ngxsWindow: false,
       excelWindow: false,
@@ -43,6 +44,15 @@ export class LaunchState {
     }
     ctx.patchState({
       openedWindows: {...newState}
+    })
+  }
+
+  @Action(Launch.IncreaseZIndex)
+  increaseZIndex(ctx: StateContext<LaunchStateModel>, action: Launch.IncreaseZIndex) {
+    const state = ctx.getState();
+    const newState = {...state, windowZIndex: state.windowZIndex + 1}
+    ctx.patchState({
+     ...newState
     })
   }
 }

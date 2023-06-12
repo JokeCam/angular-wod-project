@@ -1,17 +1,41 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, OnDestroy, Renderer2 } from '@angular/core';
+import { Select, Store } from "@ngxs/store";
+import { Observable, Subscription } from "rxjs";
+import { LaunchState } from "../../../store/state/launch.state";
+import { LaunchStateModel } from "../../../store/models/launch-state.model";
+import { Launch } from "../../../store/actions/launch.actions";
+import IncreaseZIndex = Launch.IncreaseZIndex;
 
 @Directive({
   selector: '[app-dnd]'
 })
-export class AppDndDirective {
+export class AppDndDirective implements OnDestroy {
   isMouseDown = false;
   prevX = 0;
   prevY = 0;
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {}
+  zIndex = 0;
+  zIndex$: Observable<LaunchStateModel["windowZIndex"]>;
+  subscritions = new Subscription();
+
+  constructor(
+    private store: Store,
+    private element: ElementRef,
+    private renderer: Renderer2) {
+      this.zIndex$ = store.select(state => state.launch.windowZIndex);
+      this.subscritions.add(
+        this.zIndex$.subscribe((storeZIndex) => {
+            this.zIndex = storeZIndex;
+          })
+      )
+    };
   @HostListener('mousedown', ['$event'])
   handleMouseDown(e: MouseEvent) {
     this.isMouseDown = true;
+
+    const parent = this.element.nativeElement.parentElement;
+    this.renderer.setStyle(parent, 'z-index', this.zIndex);
+    this.store.dispatch(new Launch.IncreaseZIndex());
 
     this.prevX = e.clientX;
     this.prevY = e.clientY;
@@ -20,6 +44,8 @@ export class AppDndDirective {
   @HostListener('mouseup', ['$event'])
   handleMouseUp() {
     this.isMouseDown = false;
+
+
   }
 
   @HostListener('window:mousemove', ['$event'])
@@ -42,5 +68,9 @@ export class AppDndDirective {
 
     this.prevX = e.clientX;
     this.prevY = e.clientY;
+  }
+
+  ngOnDestroy() {
+    this.subscritions.unsubscribe();
   }
 }

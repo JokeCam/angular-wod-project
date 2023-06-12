@@ -1,6 +1,10 @@
 import { WindowNames } from "../../shared/constants/window-names.constant";
 
 export namespace Launch {
+  export class IncreaseZIndex {
+    static readonly type = '[Launch] IncreaseZIndex';
+    constructor() {}
+  }
   export class ChangeStartMenuTitle {
     static readonly type = '[Launch] ChangeStartMenuTitle';
     constructor(public startMenuTitle: string) {}
