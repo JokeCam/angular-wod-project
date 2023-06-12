@@ -1,9 +1,12 @@
 # AngularWodProject
+This project is a demo of Integrating spreadsheets into Angular 
 
 ## Installation
 
-run git clone https://github.com/JokeCam/angular-wod-project.git
+- ``` git clone https://github.com/JokeCam/angular-wod-project.git ```
 
-run npm install
+- ``` npm install ```
 
-run npm run start
+## Launching
+
+- ``` npm run start ```
