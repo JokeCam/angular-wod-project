@@ -10,3 +10,7 @@ This project is a demo of Integrating spreadsheets into Angular
 ## Launching
 
 - ``` npm run start ```
+
+## Testing
+
+- ``` ng test ```
