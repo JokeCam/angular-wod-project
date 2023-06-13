@@ -1,10 +1,8 @@
 import { Directive, ElementRef, HostListener, OnDestroy, Renderer2 } from '@angular/core';
-import { Select, Store } from "@ngxs/store";
+import { Store } from "@ngxs/store";
 import { Observable, Subscription } from "rxjs";
-import { LaunchState } from "../../../store/state/launch.state";
 import { LaunchStateModel } from "../../../store/models/launch-state.model";
 import { Launch } from "../../../store/actions/launch.actions";
-import IncreaseZIndex = Launch.IncreaseZIndex;
 
 @Directive({
   selector: '[app-dnd]'
